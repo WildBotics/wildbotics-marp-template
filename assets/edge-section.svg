@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="265" viewBox="0 0 216 265">
+  <!-- Section edge: the end of the green band across the middle of a section
+       slide, rounding off with the ring's strokes. Right of it is paper. -->
+  <path d="M0 0 H96 C40 70 40 195 96 265 H0 Z" fill="#408a34"/>
+  <path d="M114 0 C58 70 58 195 114 265" fill="none" stroke="#0d3a56" stroke-width="9"/>
+  <path d="M132 0 C76 70 76 195 132 265" fill="none" stroke="#8dc63f" stroke-width="4"/>
+</svg>

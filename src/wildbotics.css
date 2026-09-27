@@ -1,0 +1,505 @@
+/* @theme wildbotics */
+/*
+ * WildBotics theme for Marp.
+ *
+ * The layouts follow the Bristol Flight Lab Marp template (title, inverted
+ * title, section, blank, blank with logo, and title-and-content), recoloured in
+ * the WildBotics green and navy, with the Flight Lab slanted edge replaced by a
+ * curve that echoes the ring around the WildBotics logo.
+ *
+ * Slides are 1280 x 720 px. Every flat field, band and rule is drawn here in
+ * CSS; the only artwork is the wordmark, the illustrated mark and the curved
+ * edges in assets/.
+ *
+ * Edit this file, then run `npm run build:theme` to regenerate
+ * themes/wildbotics.css, which is the stylesheet Marp actually loads.
+ */
+@import "default";
+
+:root {
+  --wb-green: #408a34;       /* "Wild", the leaf, the ring */
+  --wb-green-dark: #2f7328;  /* green for text on white: 5.8:1 */
+  --wb-leaf: #8dc63f;        /* highlight stroke */
+  --wb-navy: #0d3a56;        /* "Botics", the ring's outer arc */
+  --wb-sky: #4a90b8;         /* the river */
+  --wb-bark: #7a4a2a;        /* the bear */
+  --wb-amber: #e0a526;
+  --wb-grey: #e6eae4;
+  --wb-ink: #14222c;
+  --wb-paper: #ffffff;
+  --wb-link: #2f7328;
+  --wb-font: "Trebuchet MS", "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --wb-mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Brand furniture. */
+  --wb-band: 76px;           /* green header band on content slides */
+  --wb-rule: 19px;           /* navy footer rule */
+  --wb-band-fill: 1076px;    /* flat part of the header band, before the edge */
+  --wb-edge: 520px;          /* full-height curved edge on title slides */
+  --wb-field: 760px;         /* flat green field on title slides, before the edge */
+  --wb-overlap: 24px;        /* flat fields run under the opaque edge artwork,
+                                so no seam opens when a slide is scaled */
+  --wb-word: 160px 40px;     /* wordmark in the header band */
+  --wb-word-at: 20px 18px;
+  --wb-mark: 290px 242px;    /* the illustrated mark on title slides */
+  --wb-mark-at: right 18px center;
+}
+
+/*
+ * Backgrounds are layered front to back: wordmark and mark, edge artwork, then
+ * flat fields painted as single-colour gradients. Each rule keeps
+ * background-image, -position and -size in the same order.
+ */
+
+/* ---------- Base slide: "Title and Content" layout ---------- */
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 91px 72px 34px 72px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-family: var(--wb-font);
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--wb-ink);
+  background-color: var(--wb-paper);
+  background-repeat: no-repeat;
+  background-image:
+    url("../assets/wordmark-white.png"),
+    url("../assets/edge-header.svg"),
+    linear-gradient(var(--wb-green), var(--wb-green)),
+    linear-gradient(var(--wb-navy), var(--wb-navy));
+  background-position: var(--wb-word-at), 100% 0, 0 0, 0 100%;
+  background-size:
+    var(--wb-word),
+    204px var(--wb-band),
+    calc(var(--wb-band-fill) + var(--wb-overlap)) var(--wb-band),
+    100% var(--wb-rule);
+}
+
+section h1 {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 17px;
+  padding: 0;
+  border: 0;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--wb-navy);
+}
+
+section h2 {
+  margin: 0.5em 0 0.3em;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--wb-navy);
+}
+
+section h3 {
+  margin: 0.5em 0 0.25em;
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--wb-green-dark);
+}
+
+section h4, section h5, section h6 {
+  margin: 0.4em 0 0.2em;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+section p {
+  margin: 0 0 0.5em;
+}
+
+section ul, section ol {
+  margin: 0 0 0.5em;
+  padding-left: 1em;
+}
+
+section li {
+  margin: 0.35em 0;
+}
+
+section li::marker {
+  color: var(--wb-green);
+}
+
+section li li {
+  font-size: 24px;
+  margin: 0.25em 0;
+}
+
+section li li li {
+  font-size: 21px;
+}
+
+section a {
+  color: var(--wb-link);
+}
+
+section strong {
+  font-weight: 700;
+}
+
+section hr {
+  border: 0;
+  border-top: 2px solid var(--wb-green);
+  margin: 0.6em 0;
+}
+
+/* Code */
+
+section code {
+  font-family: var(--wb-mono);
+  font-size: 0.9em;
+}
+
+section pre {
+  margin: 0.4em 0 0.6em;
+  padding: 0.5em 0.8em;
+  font-size: 20px;
+  line-height: 1.35;
+  background: var(--wb-grey);
+  border-left: 5px solid var(--wb-green);
+  border-radius: 0;
+}
+
+section pre code {
+  font-size: 1em;
+}
+
+/* Tables */
+
+section table {
+  margin: 0.3em 0 0.6em;
+  font-size: 22px;
+  border-collapse: collapse;
+}
+
+section th {
+  background: var(--wb-green);
+  color: var(--wb-paper);
+  font-weight: 700;
+}
+
+section th, section td {
+  padding: 0.3em 0.7em;
+  border: 1px solid var(--wb-grey);
+}
+
+section tr:nth-child(even) td {
+  background: #f3f6f1;
+}
+
+/* Quotes and callouts */
+
+section blockquote {
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  border-left: 6px solid var(--wb-green);
+  background: var(--wb-grey);
+  font-style: normal;
+  color: var(--wb-ink);
+}
+
+section blockquote::before,
+section blockquote::after {
+  content: none;
+}
+
+section .callout {
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  border-left: 6px solid var(--wb-green);
+  background: var(--wb-grey);
+}
+
+/* Images and media */
+
+section img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+section img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+section iframe, section video {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 0;
+}
+
+section .caption {
+  margin-top: 0.3em;
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+}
+
+/* Maths (KaTeX) */
+
+section .katex {
+  font-size: 1.1em;
+}
+
+section .katex-display {
+  margin: 0.4em 0 0.6em;
+}
+
+/* Header band, footer rule and page number */
+
+section header {
+  position: absolute;
+  top: 0;
+  left: 200px;                    /* clear the wordmark */
+  right: 220px;                   /* clear the edge */
+  height: 77px;
+  margin: 0;
+  padding: 0;
+  line-height: 77px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--wb-paper);
+  text-align: center;
+}
+
+section footer {
+  position: absolute;
+  left: 72px;
+  right: 320px;
+  bottom: 0;
+  height: var(--wb-rule);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 2px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--wb-paper);
+  text-align: left;
+}
+
+section header a,
+section footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  height: var(--wb-rule);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 2px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-family: var(--wb-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--wb-paper);
+}
+
+/* ---------- Layout classes ---------- */
+
+/* Title Slide: green field, white text, the curve, the mark on paper. */
+section.title {
+  padding: 118px 560px 34px 72px;
+  color: var(--wb-paper);
+  background-image:
+    url("../assets/wordmark-white.png"),
+    url("../assets/mark.png"),
+    url("../assets/edge-title.svg"),
+    linear-gradient(var(--wb-green), var(--wb-green));
+  background-position: 40px 40px, var(--wb-mark-at), 100% 0, 0 0;
+  background-size:
+    200px 50px,
+    var(--wb-mark),
+    var(--wb-edge) 100%,
+    calc(var(--wb-field) + var(--wb-overlap)) 100%;
+}
+
+section.title h1 {
+  min-height: 251px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+  font-size: 47px;
+  color: var(--wb-paper);
+}
+
+section.title h2,
+section.title p {
+  margin: 0 0 0.4em;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--wb-paper);
+}
+
+section.title a { color: var(--wb-paper); }
+section.title header,
+section.title footer { display: none; }
+section.title::after { display: none; }
+
+/* Inverted Title Slide: paper, navy text, the curve, the mark on green. */
+section.title-inverted {
+  padding: 118px 560px 34px 72px;
+  color: var(--wb-ink);
+  background-image:
+    url("../assets/wordmark.png"),
+    url("../assets/mark.png"),
+    url("../assets/edge-title-inverted.svg");
+  background-position: 40px 40px, var(--wb-mark-at), 100% 0;
+  background-size: 200px 50px, var(--wb-mark), var(--wb-edge) 100%;
+}
+
+section.title-inverted h1 {
+  min-height: 251px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+  font-size: 55px;
+  color: var(--wb-navy);
+}
+
+section.title-inverted h2,
+section.title-inverted p {
+  margin: 0 0 0.4em;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--wb-ink);
+}
+
+section.title-inverted header { display: none; }
+section.title-inverted footer { color: var(--wb-ink); }
+section.title-inverted::after { color: var(--wb-paper); }
+
+/* Section Header: green band across the middle, rounding off at the right. */
+section.section {
+  padding: 267px 267px 34px 72px;
+  color: var(--wb-paper);
+  background-image:
+    url("../assets/wordmark.png"),
+    url("../assets/edge-section.svg"),
+    linear-gradient(var(--wb-green), var(--wb-green)),
+    linear-gradient(var(--wb-navy), var(--wb-navy));
+  background-position: 40px 40px, 1064px 227px, 0 227px, 0 100%;
+  background-size:
+    200px 50px,
+    216px 265px,
+    calc(1064px + var(--wb-overlap)) 265px,
+    100% var(--wb-rule);
+}
+
+section.section h1 {
+  min-height: 152px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+  font-size: 59px;
+  color: var(--wb-paper);
+}
+
+section.section h2,
+section.section p {
+  margin: 0 0 0.4em;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--wb-paper);
+}
+
+section.section header { display: none; }
+
+/* Blank: footer rule only. Blank with Logo: wordmark plus footer rule. */
+section.blank {
+  padding-top: 40px;
+  background-image: linear-gradient(var(--wb-navy), var(--wb-navy));
+  background-position: 0 100%;
+  background-size: 100% var(--wb-rule);
+}
+
+section.blank-logo {
+  background-image:
+    url("../assets/wordmark.png"),
+    linear-gradient(var(--wb-navy), var(--wb-navy));
+  background-position: var(--wb-word-at), 0 100%;
+  background-size: var(--wb-word), 100% var(--wb-rule);
+}
+
+section.blank header,
+section.blank-logo header {
+  color: var(--wb-green-dark);
+}
+
+/* ---------- Utilities ---------- */
+
+section .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4em 36px;
+  align-items: start;
+}
+
+section .columns-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4em 36px;
+  align-items: start;
+}
+
+section .columns > *,
+section .columns-3 > * {
+  min-width: 0;
+}
+
+section .columns > * > :first-child,
+section .columns-3 > * > :first-child {
+  margin-top: 0;
+}
+
+/* A coloured tag, for module codes such as S1 or T5. */
+section .tag {
+  display: inline-block;
+  min-width: 2.2em;
+  padding: 0.05em 0.35em;
+  border-radius: 0.2em;
+  font-weight: 700;
+  text-align: center;
+  color: var(--wb-paper);
+  background: var(--wb-green);
+}
+section .tag.navy { background: var(--wb-navy); color: var(--wb-paper) !important; }
+section .tag.sky { background: var(--wb-sky); color: var(--wb-paper) !important; }
+
+/* Utilities override layout styles, so they win regardless of specificity. */
+section .center { text-align: center !important; }
+section .small { font-size: 20px !important; }
+section .tiny { font-size: 16px !important; }
+section .muted { color: #555 !important; }
+
+section .green { color: var(--wb-green-dark) !important; }
+section .navy { color: var(--wb-navy) !important; }
+section .leaf { color: var(--wb-leaf) !important; }
+section .sky { color: var(--wb-sky) !important; }
+section .bark { color: var(--wb-bark) !important; }
+section .amber { color: var(--wb-amber) !important; }
+
+/* A list whose items start with a tag needs no bullet. */
+section li:has(> .tag:first-child) {
+  list-style: none;
+}
+section li:has(> .tag:first-child)::marker {
+  content: none;
+}

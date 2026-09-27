@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="720" viewBox="0 0 520 720">
+  <!-- WildBotics title edge: green field on the left curving away to paper on
+       the right, with the navy and leaf-green strokes of the logo's ring. -->
+  <path d="M0 0 H210 C92 200 92 520 210 720 H0 Z" fill="#408a34"/>
+  <path d="M232 0 C114 200 114 520 232 720" fill="none" stroke="#0d3a56" stroke-width="14"/>
+  <path d="M258 0 C140 200 140 520 258 720" fill="none" stroke="#8dc63f" stroke-width="5"/>
+</svg>

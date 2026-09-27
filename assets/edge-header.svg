@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="76" viewBox="0 0 204 76">
+  <!-- WildBotics header edge: the green band sweeps up into navy, echoing the
+       ring around the logo. Opaque, drawn at 204 x 76 on a 76 px band. -->
+  <rect width="204" height="76" fill="#408a34"/>
+  <path d="M96 76 C112 44 132 14 176 0 H204 V76 Z" fill="#0d3a56"/>
+  <path d="M74 76 C92 40 116 10 158 0" fill="none" stroke="#8dc63f" stroke-width="4" stroke-linecap="round"/>
+</svg>
