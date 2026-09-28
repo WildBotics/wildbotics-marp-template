@@ -46,11 +46,12 @@ Slides are separated by `---`. Pick a layout with a class directive:
 | Class | Layout | Notes |
 |---|---|---|
 | *(none)* | Title and content | Green band with the wordmark, navy footer rule |
-| `title` | Title slide | Green field, white text, the mark on the right. No footer or page number |
+| `title` | Title slide | Graded green field, white text, a large curved picture area on the right, and the EU emblem. No footer or page number |
 | `title-inverted` | Inverted title | White field, navy title, the mark on green. Good for a closing slide |
 | `section` | Section header | `# Title` plus one `##` line, in a green band across the middle |
 | `blank` | Blank | Footer rule only |
 | `blank-logo` | Blank with logo | Colour wordmark plus footer rule |
+| `acknowledgements` | Acknowledgements | Partner logos, the EU emblem and funding statement, and the WildBotics channels. Needs only a title |
 
 ```markdown
 <!-- _class: section -->
@@ -95,11 +96,34 @@ Images use Marp's [image syntax](https://marpit.marp.app/image-syntax):
 HTML (`<iframe>`, `<video>`) and presenter notes (HTML comments, `P` in the
 HTML deck) all work as in the Flight Lab template.
 
-## Funding acknowledgement
+## The title picture
 
-End every public deck with the funding acknowledgement. The example deck's last
-slide shows it: a `blank-logo` slide with the text in a `.callout.small`. Copy
-that slide rather than retyping the text.
+The title slide's picture area shows the WildBotics mark until you give it a
+picture, which is scaled to cover the area and clipped to its curve:
+
+```markdown
+<!-- _class: title -->
+
+# Your talk title
+
+![hero](fieldwork.jpg)
+```
+
+The crop is centred. To move it, add
+`<style scoped>section { --wb-hero-at: 30% 50%; }</style>` to the slide, with
+the horizontal and vertical focus.
+
+## Acknowledgements
+
+End every public deck with the acknowledgements slide. The theme draws the
+partner logos, the EU emblem, the funding statement and the WildBotics
+channels, so the slide needs only a title:
+
+```markdown
+<!-- _class: acknowledgements -->
+
+# Thank you
+```
 
 ## Palette
 
@@ -122,8 +146,9 @@ it is used for, but not for small body text.
   gradients, so colours and sizes are custom properties at the top of the file.
 - `npm run build:theme` inlines `assets/` as data URIs into
   `themes/wildbotics.css`, which is what Marp loads. Commit both.
-- `assets/` holds the wordmark (colour and white), the illustrated mark, and
-  four curved edge SVGs. The PNGs are cut from the logo JPEG by
+- `assets/` holds the wordmark (colour and white), the illustrated mark, the
+  curved edges and the title background, the EU emblems, the partner logos,
+  and the social icons (credited in `assets/icons/README.md`). The PNGs are cut from the logo JPEG by
   `brand/make_artwork.py` in the WildBotics site's source repository; the SVGs are drawn by
   hand. Replace them with vector originals if a designer can supply them.
 

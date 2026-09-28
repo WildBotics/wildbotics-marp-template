@@ -18,6 +18,12 @@ author: "WildBotics training team"
 MSCA Doctoral Network · 2026–2029
 
 <!--
+To put a picture in the curved area on the right, add a line to this slide:
+
+  ![hero](your-photo.jpg)
+
+It is cropped to fill the area. Without one, the WildBotics mark shows.
+
 Presenter notes go in HTML comments like this one. Press P in the HTML deck
 for presenter view. They are left out of the PDF.
 -->
@@ -263,13 +269,6 @@ wildbotics.eu
 
 ---
 
-<!-- _class: blank-logo -->
-<!-- _paginate: false -->
+<!-- _class: acknowledgements -->
 
-# Acknowledgement
-
-<div class="callout small">
-
-WildBotics is an MSCA Doctoral Network funded by the European Union’s Horizon Europe research and innovation funding programme under the Marie Skłodowska-Curie grant agreement no. 101227034. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the European Commission. Neither the EU nor the EC can be held responsible for them.
-
-</div>
+# Thank you
