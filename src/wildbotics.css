@@ -494,14 +494,16 @@ section.acknowledgements h1 {
 
 section.acknowledgements header { display: none; }
 
-/* The funding statement, beside the emblem. */
+/* The funding acknowledgement and the EU disclaimer, word for word as the
+   Horizon Europe grant agreement gives it (Art 17.3), then the licence. */
 section.acknowledgements::before {
-  content: "WildBotics is an MSCA Doctoral Network funded by the European Union’s Horizon Europe research and innovation funding programme under the Marie Skłodowska-Curie grant agreement no. 101227034. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the European Commission. Neither the EU nor the EC can be held responsible for them.";
+  content: "WildBotics has received funding from the European Union’s Horizon Europe research and innovation programme under the Marie Skłodowska-Curie grant agreement No 101227034. Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency (REA). Neither the European Union nor the granting authority can be held responsible for them.\A© the authors. Licensed under CC BY 4.0.";
   position: absolute;
   left: 292px;
   top: 440px;
   width: 520px;
-  font-size: 15px;
+  font-size: 14px;
+  white-space: pre-line;
   line-height: 1.4;
   color: var(--wb-ink);
 }

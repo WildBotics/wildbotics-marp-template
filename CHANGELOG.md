@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-02
+
+### Changed
+
+- Acknowledgements: the funding acknowledgement, then the EU disclaimer word
+  for word as the Horizon Europe Annotated Grant Agreement gives it
+  (Art 17.3), naming REA as the granting authority, and the licence line
+  "© the authors. Licensed under CC BY 4.0."
+
 ## [0.2.0] - 2026-09-29
 
 ### Added
