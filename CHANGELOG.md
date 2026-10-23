@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-10-23
+
+### Changed
+
+- Acknowledgements: the grant is named in Horizon Europe terms ("WildBotics
+  is a Marie Skłodowska-Curie Actions Doctoral Network under Horizon Europe,
+  grant agreement No 101227034") in place of the old Horizon 2020 "has
+  received funding from" formula. The EU disclaimer is unchanged: it matches
+  Article 17.3 of the current Model Grant Agreements word for word.
+
 ## [0.3.0] - 2026-10-02
 
 ### Changed

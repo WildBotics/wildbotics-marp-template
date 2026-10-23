@@ -1,6 +1,6 @@
 {
   "name": "wildbotics-marp-template",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Marp theme for WildBotics slides, in the style of the Bristol Flight Lab template",
   "license": "UNLICENSED",
@@ -13,11 +13,11 @@
   "scripts": {
     "build:theme": "node scripts/build-theme.mjs",
     "build:files": "node -e \"require('fs').cpSync('example','dist',{recursive:true,filter:f=>!f.endsWith('.md')})\"",
-    "build": "npm run build:theme && npm run build:files && marp example/slides.md -o dist/slides.html",
-    "pdf": "npm run build:theme && marp example/slides.md -o dist/slides.pdf",
-    "pptx": "npm run build:theme && marp example/slides.md -o dist/slides.pptx",
-    "png": "npm run build:theme && marp example/slides.md --images png -o dist/slides.png",
-    "watch": "npm run build:theme && npm run build:files && marp -w example/slides.md -o dist/slides.html",
+    "build": "npm run build:theme && npm run build:files && marp --no-stdin example/slides.md -o dist/slides.html",
+    "pdf": "npm run build:theme && marp --no-stdin example/slides.md -o dist/slides.pdf",
+    "pptx": "npm run build:theme && marp --no-stdin example/slides.md -o dist/slides.pptx",
+    "png": "npm run build:theme && marp --no-stdin example/slides.md --images png -o dist/slides.png",
+    "watch": "npm run build:theme && npm run build:files && marp --no-stdin -w example/slides.md -o dist/slides.html",
     "serve": "npm run build:theme && marp -s ."
   },
   "devDependencies": {
