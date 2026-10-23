@@ -1,6 +1,6 @@
 {
   "name": "wildbotics-marp-template",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "description": "Marp theme for WildBotics slides, in the style of the Bristol Flight Lab template",
   "license": "UNLICENSED",
