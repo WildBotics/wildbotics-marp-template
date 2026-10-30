@@ -3,7 +3,7 @@
 A [Marp](https://marp.app) theme for WildBotics slides, so talks and training
 materials can be written in Markdown, kept in Git, and exported to HTML, PDF,
 PPTX or PNG. It follows the layouts of the Bristol Flight Lab template in the
-WildBotics green and navy, with a curved edge taken from the ring around the
+WildBotics green and navy, with the curved edge of the house style, and the
 WildBotics logo.
 
 The matching site theme is used on <https://wildbotics.github.io/>, so a
@@ -129,12 +129,12 @@ channels, so the slide needs only a title:
 
 | Token | Hex | From the logo |
 |---|---|---|
-| `--wb-green` | `#408A34` | "Wild", the leaf, the ring |
+| `--wb-green` | `#408A34` | "Wild", the leaf, the deer |
 | `--wb-green-dark` | `#2F7328` | green for text on white (5.8:1) |
 | `--wb-leaf` | `#8DC63F` | highlight stroke |
 | `--wb-navy` | `#0D3A56` | "Botics", the outer arc |
-| `--wb-sky` | `#4A90B8` | the river |
-| `--wb-bark` | `#7A4A2A` | the bear |
+| `--wb-sky` | `#4A90B8` | accent |
+| `--wb-bark` | `#7A4A2A` | accent |
 | `--wb-amber` | `#E0A526` | accent |
 
 White on `--wb-green` is 4.3:1, which is fine for the bold header and title text
@@ -146,9 +146,9 @@ it is used for, but not for small body text.
   gradients, so colours and sizes are custom properties at the top of the file.
 - `npm run build:theme` inlines `assets/` as data URIs into
   `themes/wildbotics.css`, which is what Marp loads. Commit both.
-- `assets/` holds the wordmark (colour and white), the illustrated mark, the
+- `assets/` holds the wordmark (colour and white), the emblem (colour and white), the
   curved edges and the title background, the EU emblems, the partner logos,
-  and the social icons (credited in `assets/icons/README.md`). The PNGs are cut from the logo JPEG by
+  and the social icons (credited in `assets/icons/README.md`). The PNGs are generated from the vector logo by
   `brand/make_artwork.py` in the WildBotics site's source repository; the SVGs are drawn by
   hand. Replace them with vector originals if a designer can supply them.
 

@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-30
+
+### Changed
+
+- The new WildBotics logo, in the existing palette: new wordmark (slightly
+  wider, so its boxes are 160 x 36 and 200 x 46 px), and the deer, leaf,
+  spanner, and whale emblem in place of the illustrated mark. The inverted
+  title uses the white emblem, on the green.
+
 ## [0.3.2] - 2026-10-23
 
 ### Changed

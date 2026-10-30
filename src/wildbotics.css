@@ -5,10 +5,10 @@
  * The layouts follow the Bristol Flight Lab Marp template (title, inverted
  * title, section, blank, blank with logo, and title-and-content), recoloured in
  * the WildBotics green and navy, with the Flight Lab slanted edge replaced by a
- * curve that echoes the ring around the WildBotics logo.
+ * curve that is the WildBotics house style.
  *
  * Slides are 1280 x 720 px. Every flat field, band and rule is drawn here in
- * CSS; the only artwork is the wordmark, the illustrated mark and the curved
+ * CSS; the only artwork is the wordmark, the emblem and the curved
  * edges in assets/.
  *
  * Edit this file, then run `npm run build:theme` to regenerate
@@ -17,12 +17,12 @@
 @import "default";
 
 :root {
-  --wb-green: #408a34;       /* "Wild", the leaf, the ring */
+  --wb-green: #408a34;       /* "Wild", the leaf, the deer */
   --wb-green-dark: #2f7328;  /* green for text on white: 5.8:1 */
   --wb-leaf: #8dc63f;        /* highlight stroke */
-  --wb-navy: #0d3a56;        /* "Botics", the ring's outer arc */
-  --wb-sky: #4a90b8;         /* the river */
-  --wb-bark: #7a4a2a;        /* the bear */
+  --wb-navy: #0d3a56;        /* "Botics", the whale */
+  --wb-sky: #4a90b8;         /* accent */
+  --wb-bark: #7a4a2a;        /* accent */
   --wb-amber: #e0a526;
   --wb-grey: #e6eae4;
   --wb-ink: #14222c;
@@ -39,9 +39,9 @@
   --wb-field: 760px;         /* flat green field on title slides, before the edge */
   --wb-overlap: 24px;        /* flat fields run under the opaque edge artwork,
                                 so no seam opens when a slide is scaled */
-  --wb-word: 160px 40px;     /* wordmark in the header band */
-  --wb-word-at: 20px 18px;
-  --wb-mark: 290px 242px;    /* the illustrated mark on title slides */
+  --wb-word: 160px 36px;     /* wordmark in the header band */
+  --wb-word-at: 20px 20px;
+  --wb-mark: 290px 215px;    /* the emblem on title slides */
   --wb-mark-at: right 18px center;
 }
 
@@ -333,8 +333,8 @@ section.title {
     url("../assets/eu-funded-horizontal.png"),
     url("../assets/mark.png"),
     url("../assets/title-bg.svg");
-  background-position: 40px 40px, 58px 635px, 842px 218px, 0 0;
-  background-size: 200px 50px, 215px 46px, 340px 284px, 1280px 720px;
+  background-position: 40px 42px, 58px 635px, 842px 234px, 0 0;
+  background-size: 200px 46px, 215px 46px, 340px 252px, 1280px 720px;
 }
 
 /* A picture for the title slide: ![hero](photo.jpg) anywhere on the slide.
@@ -386,10 +386,10 @@ section.title-inverted {
   color: var(--wb-ink);
   background-image:
     url("../assets/wordmark.png"),
-    url("../assets/mark.png"),
+    url("../assets/mark-white.png"),
     url("../assets/edge-title-inverted.svg");
-  background-position: 40px 40px, var(--wb-mark-at), 100% 0;
-  background-size: 200px 50px, var(--wb-mark), var(--wb-edge) 100%;
+  background-position: 40px 42px, var(--wb-mark-at), 100% 0;
+  background-size: 200px 46px, var(--wb-mark), var(--wb-edge) 100%;
 }
 
 section.title-inverted h1 {
@@ -421,9 +421,9 @@ section.section {
     url("../assets/edge-section.svg"),
     linear-gradient(var(--wb-green), var(--wb-green)),
     linear-gradient(var(--wb-navy), var(--wb-navy));
-  background-position: 40px 40px, 1064px 227px, 0 227px, 0 100%;
+  background-position: 40px 42px, 1064px 227px, 0 227px, 0 100%;
   background-size:
-    200px 50px,
+    200px 46px,
     216px 265px,
     calc(1064px + var(--wb-overlap)) 265px,
     100% var(--wb-rule);
